@@ -4,7 +4,6 @@ import './interval.css';
 import Card from './Card';
 
 export default props => {
-    const {min, max} = props;
     return (
         <Card title="Interval" red>
             <div className="Interval">        
@@ -12,16 +11,14 @@ export default props => {
                     <strong>Min:</strong>
                     <input 
                     type="number" 
-                    value={min} 
-                    onChange={event => props.onMinChanged(+event.target.value)}
+                    readOnly
                     />
                 </span>
                 <span>
                     <strong>Max:</strong>
                     <input 
                     type="number" 
-                    value={max} 
-                    onChange={event => props.onMaxChanged(+event.target.value)}
+                    readOnly
                     />
                 </span>
             </div>    

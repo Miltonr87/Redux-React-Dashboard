@@ -1,10 +1,10 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from 'react';
+import { connect } from 'react-redux';
 import Card from './Card';
 
-export default props => {
-    const {min, max} = props;
-
+const Average = props => {
+    const {min, max} = props               // or function Average(props) {} // 
     return (
         <Card title="Average" green>
             <div>        
@@ -16,3 +16,12 @@ export default props => {
         </Card>
     )
 }
+
+function mapStateToProps(state) {
+    return {
+        min: state.numbers.min,
+        max: state.numbers.max,
+    }
+}
+
+export default connect(mapStateToProps)(Average);
